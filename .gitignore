@@ -11,3 +11,6 @@ src/RES32/Debug
 src/RES32/Release
 src/third-party/SDL
 src/third-party/SDL_mixer
+
+*.o
+*.depend

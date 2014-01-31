@@ -1,101 +1,55 @@
-#
-# Makefile for Bombermaaaan
-#
-#
-#
-SHELL=/bin/sh
+# SDL library
+SDL_CONFIG := sdl-config
+SDL_CFLAGS := $(shell $(SDL_CONFIG) --cflags)
+SDL_LDFLAGS := $(shell $(SDL_CONFIG) --libs) -lSDL_mixer
 
+# tinyxml path
+TINYXML_PATH := ../third-party/tinyxml
 
-prefix?=/usr/local
-exec_prefix=${prefix}
-subdirs=third-party RESGEN Bombermaaan
-DPKG=dpkg-deb -b
-PLATFORM = $(shell uname -m)
-ifeq ($(PLATFORM),x86_64)
-	PLATFORM=amd64
+CPP  = g++
+CC   = gcc
+OBJ  = CBoard.o CClock.o CCloudManager.o CCommandChunk.o CControls.o CDemo.o CDrawGame.o CHurryMessage.o CLevel.o CMatch.o CMenu.o CMenuBase.o CMenuBomber.o CMenuInput.o CMenuLevel.o CMenuMatch.o CMenuYesNo.o CModeScreen.o CMosaic.o CPauseMessage.o CRandomMosaic.o CScroller.o CTitle.o CVictory.o CWinner.o CConsole.o CSDLVideo.o CSDLInput.o CLog.o CWindow.o CDebug.o CDisplay.o CFont.o CGame.o CInput.o CMainInput.o COptions.o CPlayerInput.o CScores.o CSound.o CArena.o CArenaCloser.o CArenaSnapshot.o CBomb.o CBomber.o CBomberMove.o CElement.o CExplosion.o CFloor.o CItem.o CWall.o CAiArena.o CAiBomber.o CAiManager.o WinMain.o winreplace.o
+SRC  = $(OBJ:%.o=%.cpp) STDAFX.CPP
+LINKOBJ = $(OBJ) STDAFX.o $(TINYXML_PATH)/tinystr.o $(TINYXML_PATH)/tinyxmlerror.o $(TINYXML_PATH)/tinyxml.o $(TINYXML_PATH)/tinyxmlparser.o
+LIBS = -L../RESGEN $(SDL_LDFLAGS) -lbombermaaan
+CXXINCS =  -I./ -I$(TINYXML_PATH)
+BIN  = Bombermaaan
+STRIP = strip
+CXXFLAGS = $(CXXINCS) $(SDL_CFLAGS) -Wall -O2
+ifeq ($(DEBUG),1)
+	CXXFLAGS += -g
 endif
-ifeq ($(PLATFORM),i686)
-	PLATFORM=i386
-endif
-ifeq ($(PLATFORM),i586)
-	PLATFORM=i386
-endif
-VERSION=1.3.2-5
-BINFILENAME=Bombermaaan
-BIN=Bombermaaan/$(BINFILENAME)
-LIBBASENAME=libbombermaaan.so
-LIBVERSION=1
-LIBREVISION=0.0
-LIBFILENAME=$(LIBBASENAME).$(LIBVERSION).$(LIBREVISION)
-LIB = RESGEN/$(LIBFILENAME)
+RM = rm -f
+DEPENDFILE = .depend
 
-CHMOD=chmod
-CP=cp
-RM=rm -f
-LN=ln -sf
-SED=sed
-STRIP=strip
+.PHONY: all all-before all-after clean strip clean-custom
 
-CFLAGS = -O2
+all: all-before $(BIN) all-after
 
-all:
-	@for i in ${subdirs}; do \
-		echo Making all in $$i ; \
-		(cd $$i; ${MAKE} all) \
-	done
+$(DEPENDFILE): $(SRC)
+	$(CPP) -MM $(SRC) $(CXXFLAGS) > $(DEPENDFILE)
 
-install:
-	@for i in ${subdirs}; do \
-		echo Installing in $$i ; \
-		(cd $$i; ${MAKE} install) \
-	done
+-include $(DEPENDFILE)
 
-uninstall:
-	@for i in ${subdirs}; do \
-		echo Uninstalling in $$i ; \
-		(cd $$i; ${MAKE} uninstall) \
-	done
+clean: clean-custom
+	$(RM) $(LINKOBJ) $(BIN) $(DEPENDFILE) *~
 
-depend:
-	@for i in ${subdirs}; do \
-		echo Depending in $$i ; \
-		(cd $$i; ${MAKE} depend) \
-	done
+install: all
+	mkdir -p $(prefix)/bin
+	$(INSTALL) $(BIN) $(prefix)/bin
 
-debian: debian.deb debian-data.deb
-	@echo "Debian Packages were created successfully."
+uninstall: all
+	$(RM) $(prefix)/bin/$(BIN)
 
-debian.deb: $(BIN)
-	$(CP) $(BIN) debian/usr/games/$(BINFILENAME)
-	$(STRIP) debian/usr/games/$(BINFILENAME)
-	$(SED) -e 's/ARCHITECTURE/$(PLATFORM)/' debian/DEBIAN/control.dist > debian/DEBIAN/control
-	$(CP) CHANGELOG.txt debian/usr/share/doc/bombermaaan/
-	$(CHMOD) 755 debian/DEBIAN/post*
-	$(CHMOD) 755 md5sum.pl
-	(cd debian; ../md5sum.pl)
-	$(DPKG) debian bombermaaan_$(VERSION)_$(PLATFORM).deb
+strip: $(BIN)
+	$(STRIP) $(BIN)
 
-debian-data.deb: $(LIB)
-	$(CP) $(LIB) debian-data/usr/lib/$(LIBFILENAME)
-	(cd debian-data/usr/lib; $(LN) $(LIBFILENAME) $(LIBBASENAME); $(LN) $(LIBFILENAME) $(LIBBASENAME).$(LIBVERSION))
-	$(SED) -e 's/ARCHITECTURE/$(PLATFORM)/' debian-data/DEBIAN/control.dist > debian-data/DEBIAN/control
-	$(CP) CHANGELOG.txt debian-data/usr/share/doc/bombermaaan-data/
-	$(CHMOD) 755 debian/DEBIAN/post*
-	$(CHMOD) 755 md5sum.pl
-	(cd debian-data; ../md5sum.pl)
-	$(DPKG) debian-data bombermaaan-data_$(VERSION)_$(PLATFORM).deb
+$(BIN): $(DEPENDFILE) $(LINKOBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-clean:
-	@for i in ${subdirs}; do \
-		echo Cleaning in $$i ; \
-		(cd $$i; ${MAKE} clean) \
-	done
-	$(RM) debian/usr/games/$(BIN)
-	$(RM) debian-data/usr/lib/$(LIBFILENAME) debian-data/usr/lib/$(LIBBASENAME) debian-data/usr/lib/$(LIBBASENAME).$(LIBVERSION)
-	$(RM) debian/DEBIAN/control debian-data/DEBIAN/control
-	$(RM) debian/usr/share/doc/bombermaaan/CHANGELOG.txt debian-data/usr/share/doc/bombermaaan-data/CHANGELOG.txt
-	$(RM) bombermaaan_$(VERSION)_$(PLATFORM).deb bombermaaan-data_$(VERSION)_$(PLATFORM).deb
+STDAFX.o: STDAFX.CPP
+	$(CPP) -c $< -o $@ $(CXXFLAGS)
 
-distclean: clean
-	$(RM) .tm_project2.cache
+%.o: %.cpp
+	$(CPP) -c $< -o $@ $(CXXFLAGS)
 

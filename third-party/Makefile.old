@@ -8,31 +8,31 @@ subdirs=tinyxml
 all:
 	@for i in ${subdirs}; do \
 		echo Making all in $$i ; \
-		(cd $$i; ${MAKE} all) \
+		(cd $$i; ${MAKE} -f Makefile.old all) \
 	done
 
 install:
 	@for i in ${subdirs}; do \
 		echo Installing in $$i ; \
-		(cd $$i; ${MAKE} install) \
+		(cd $$i; ${MAKE} -f Makefile.old install) \
 	done
 
 uninstall:
 	@for i in ${subdirs}; do \
 		echo Uninstalling in $$i ; \
-		(cd $$i; ${MAKE} uninstall) \
+		(cd $$i; ${MAKE} -f Makefile.old uninstall) \
 	done
 
 depend:
 	@for i in ${subdirs}; do \
 		echo Depending in $$i ; \
-		(cd $$i; ${MAKE} depend) \
+		(cd $$i; ${MAKE} -f Makefile.old depend) \
 	done
 
 clean:
 	@for i in ${subdirs}; do \
 		echo Cleaning in $$i ; \
-		(cd $$i; ${MAKE} clean) \
+		(cd $$i; ${MAKE} -f Makefile.old clean) \
 	done
 
 distclean: clean

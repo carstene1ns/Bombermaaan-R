@@ -174,7 +174,7 @@ bool buildResourceArrayWithHeader(int hBitmapCount, int hSoundCount,
             // now determine resource number
             pos = -1;
             
-            for (int i = wspace + 1; i < (int)Line.size(); i++)
+            for (int i = wspace + 1; i < (int)Line.size()+1; i++)
             {
                 if (pos == -1 &&
                     Line.c_str()[i] >= '0' && Line.c_str()[i] <= '9')

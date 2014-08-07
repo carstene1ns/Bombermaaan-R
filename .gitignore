@@ -14,6 +14,8 @@ src/third-party/SDL_mixer
 
 *.o
 *.depend
+*.so
+*.a
 
 # copied audio files
 RES/SOUND
@@ -21,3 +23,17 @@ RES32/SOUND
 
 # generated data file
 RESGEN/ResData.c
+
+# cmake files from in-source build
+_CPack_Packages/
+CMakeFiles
+cmake_install.cmake
+CMakeCache.txt
+CPackConfig.cmake
+CPackSourceConfig.cmake
+Makefile
+install_manifest.txt
+
+# built packages
+*.deb
+*.tar.gz

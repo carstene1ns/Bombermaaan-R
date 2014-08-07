@@ -14,3 +14,10 @@ src/third-party/SDL_mixer
 
 *.o
 *.depend
+
+# copied audio files
+RES/SOUND
+RES32/SOUND
+
+# generated data file
+RESGEN/ResData.c

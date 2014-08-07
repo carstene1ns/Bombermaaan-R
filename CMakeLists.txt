@@ -102,9 +102,20 @@ foreach(f ${TINYXML_SRCFILES})
 endforeach()
 add_library(TinyXML STATIC ${TINYXML_SOURCES})
 
+# copy sounds and music files to RES and RES32 directories
+add_custom_target(copy_audiofiles)
+add_custom_command(TARGET copy_audiofiles PRE_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory assets/sounds RES/SOUND
+    COMMAND ${CMAKE_COMMAND} -E copy_directory assets/music RES/SOUND
+    COMMAND ${CMAKE_COMMAND} -E copy_directory assets/sounds RES32/SOUND
+    COMMAND ${CMAKE_COMMAND} -E copy_directory assets/music RES32/SOUND
+    COMMENT "Copying Music and Sound files to ressource folders..."
+)
+
 # data library
 include_directories(RESGEN)
 add_executable(ResGen RESGEN/ResGen.cpp)
+add_dependencies(ResGen copy_audiofiles)
 add_custom_command(OUTPUT RESGEN/ResData.c
     COMMAND ResGen
     DEPENDS ResGen

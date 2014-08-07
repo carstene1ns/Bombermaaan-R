@@ -130,3 +130,26 @@ install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}-data
     RUNTIME DESTINATION bin
     LIBRARY DESTINATION lib
 )
+if(UNIX)
+    install(FILES assets/linux/Bombermaaan.desktop
+        DESTINATION share/applications)
+    install(FILES assets/linux/Bombermaaan.png
+        DESTINATION share/pixmaps)
+endif()
+
+# packaging
+set(CPACK_PACKAGE_NAME ${PROJECT_NAME})
+set(CPACK_PACKAGE_VERSION ${VERSION})
+set(CPACK_GENERATOR "TGZ;DEB")
+
+set(CPACK_DEBIAN_PACKAGE_DEPENDS
+    "libc6 (>= 2.7-1),"
+    "libgcc1 (>= 1:4.1.1-21),"
+    "libsdl1.2 (>= 1.2.10-1),"
+    "libsdl-mixer1.2 (>= 1.2.7-1),"
+    "libstdc++6 (>= 4.1.1-21)"
+)
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Markus Drescher <markus.drescher@ira.uka.de>")
+set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "A Bomberman clone.")
+set(CPACK_DEBIAN_PACKAGE_SECTION "games")
+include(CPack)

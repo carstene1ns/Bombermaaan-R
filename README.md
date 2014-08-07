@@ -46,7 +46,7 @@ changed, fixed, added, and removed in each version.
 Credits
 -------
 
-Bombermaaan is using [TinyXML][][2].
+Bombermaaan is using [TinyXML][2].
 Bombermaaan is using [Doxygen][3] for [documentation][4] purposes.
 Bombermaaan is using [SimpleIni][5].
 
@@ -61,7 +61,7 @@ News
 Check [http://bombermaaan.sourceforge.net/][1] for the latest news.
 
 [1]: http://bombermaaan.sourceforge.net/
-[2]: https://sourceforge.net/projects/tinyxml
-[3]: http://www.doxygen.org/index.html
+[2]: http://www.grinninglizard.com/tinyxml
+[3]: http://www.doxygen.org
 [4]: http://bombermaaan.sourceforge.net/doxydoc/html/
-[5]: http://code.jellycan.com/simpleini/
+[5]: https://github.com/brofield/simpleini

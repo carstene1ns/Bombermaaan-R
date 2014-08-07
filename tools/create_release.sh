@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# EARLY RETURN
+
+echo "This file is not working and used anymore! It is just left for reference."
+exit 1
+
 # Created by Bernd Arnold for Bombermaaan
 
 

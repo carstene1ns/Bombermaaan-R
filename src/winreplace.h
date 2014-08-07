@@ -24,8 +24,8 @@
  *  \brief Replaces a windows.h include (for Linux)
  */
 
-#ifndef __WINREPLACE_H__
-#define __WINREPLACE_H__
+#ifndef WINREPLACE_H
+#define WINREPLACE_H
 
 #include <sys/time.h>
 #include <sys/types.h>
@@ -33,8 +33,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
 #include <dirent.h>
+
 using namespace std;
 
 // macros
@@ -86,90 +86,90 @@ using namespace std;
 
 // some types
 #ifndef HANDLE
-typedef FILE TMP_HANDLE, *HANDLE;
-#define DECLARE_HANDLE(n) typedef struct n##__{int i;}*n
+    typedef FILE TMP_HANDLE, *HANDLE;
+    #define DECLARE_HANDLE(n) typedef struct n##__{int i;}*n
 
-DECLARE_HANDLE(HWND);
-DECLARE_HANDLE(HINSTANCE);
-DECLARE_HANDLE(HRSRC);
-DECLARE_HANDLE(HGLOBAL);
-typedef void TMP_HMODULE, *HMODULE;
+    DECLARE_HANDLE(HWND);
+    DECLARE_HANDLE(HINSTANCE);
+    DECLARE_HANDLE(HRSRC);
+    DECLARE_HANDLE(HGLOBAL);
+    typedef void TMP_HMODULE, *HMODULE;
 #endif
 
 #ifndef __int64
-typedef long long __int64;
+    typedef long long __int64;
 #endif
 
 #ifndef BYTE
-typedef unsigned char BYTE;
+    typedef unsigned char BYTE;
 #endif
 
 #ifndef WORD
-typedef unsigned short WORD;
+    typedef unsigned short WORD;
 #endif
 
 #ifndef CHAR
-typedef char CHAR;
+    typedef char CHAR;
 #endif
 
 #ifndef DWORD
-typedef unsigned long DWORD;
+    typedef unsigned long DWORD;
 #endif
 	
 #ifndef LONG
-typedef long LONG;
+    typedef long LONG;
 #endif
 
 #ifndef HRESULT
-typedef LONG HRESULT;
+    typedef LONG HRESULT;
 #endif
 
 #ifndef LONGLONG
-typedef long long LONGLONG;
+    typedef long long LONGLONG;
 #endif
 
 #ifndef ULONGLONG
-typedef unsigned long long ULONGLONG;
+    typedef unsigned long long ULONGLONG;
 #endif
 
 #ifndef UINT_PTR
-typedef  unsigned int UINT_PTR, *PUINT_PTR;
+    typedef  unsigned int UINT_PTR, *PUINT_PTR;
 #endif
 
 #ifndef LONG_PTR
-typedef  long LONG_PTR, *PLONG_PTR;
+    typedef  long LONG_PTR, *PLONG_PTR;
 #endif
 
 #ifndef LPVOID
-typedef void *PVOID,*LPVOID;
+    typedef void *PVOID,*LPVOID;
 #endif
 
 #ifndef WPARAM
-typedef LONG_PTR WPARAM;
+    typedef LONG_PTR WPARAM;
 #endif
 
 #ifndef LPARAM
-typedef LONG_PTR LPARAM;
+    typedef LONG_PTR LPARAM;
 #endif
 
 #ifndef SOCKET
-typedef u_int   SOCKET;
+    typedef u_int   SOCKET;
 #endif
 
 #ifndef LPCSTR
-typedef const CHAR *PCSTR,*LPCSTR;
+    typedef const CHAR *PCSTR,*LPCSTR;
 #endif
 
 // this is actually wrong but fits our purposes
 #ifndef HBITMAP
-typedef int HBITMAP;
+    typedef int HBITMAP;
 #endif
 
 #define INVALID_SOCKET (SOCKET)(~0)
 #define SOCKET_ERROR    (-1)
 
 #ifndef MAKEINTRESOURCE
-#define MAKEINTRESOURCE(i) (i)
+    #define MAKEINTRESOURCE(i) (i)
 #endif
 
 typedef struct sockaddr_in SOCKADDR_IN;
@@ -178,33 +178,33 @@ typedef struct sockaddr SOCKADDR;
 typedef struct sockaddr *LPSOCKADDR;
 
 #ifndef _LARGE_INTEGER
-typedef union _LARGE_INTEGER {
-#if ! defined(NONAMELESSUNION) || defined(__cplusplus)
-	struct { //_ANONYMOUS_STRUCT
-	  DWORD LowPart;
-	  LONG  HighPart;
-	} a;
-#endif /* NONAMELESSUNION */
-	struct {
-		DWORD LowPart;
-		LONG  HighPart;
-	} u;
-	LONGLONG QuadPart;
-} LARGE_INTEGER, *PLARGE_INTEGER;
+    typedef union _LARGE_INTEGER {
+    #if ! defined(NONAMELESSUNION) || defined(__cplusplus)
+        struct { //_ANONYMOUS_STRUCT
+            DWORD LowPart;
+            LONG  HighPart;
+        } a;
+    #endif /* NONAMELESSUNION */
+        struct {
+            DWORD LowPart;
+            LONG  HighPart;
+        } u;
+       LONGLONG QuadPart;
+    } LARGE_INTEGER, *PLARGE_INTEGER;
 #endif
 
 #ifndef RECT
-typedef struct tagRECT 
-{
-   LONG left;
-   LONG top;
-   LONG right;
-   LONG bottom;
-} RECT; // , *PRECT, NEAR *NPRECT, FAR *LPRECT
+    typedef struct tagRECT 
+    {
+        LONG left;
+        LONG top;
+        LONG right;
+        LONG bottom;
+    } RECT; // , *PRECT, NEAR *NPRECT, FAR *LPRECT
 #endif
 
 #ifndef Sleep
-#  define Sleep(X) usleep(X*1000);
+    #define Sleep(X) usleep(X*1000);
 #endif
 
 // _finddata_t data structure
@@ -239,8 +239,6 @@ LPVOID LockResource (HGLOBAL hGlobal);
 DWORD SizeofResource (HMODULE hModule, HRSRC hResource);
 
 // this function is in the shared library
-extern "C"
-{
-    unsigned char *getResource(int type, int id, unsigned long *len);
-}
-#endif
+extern "C" unsigned char *getResource(int type, int id, unsigned long *len);
+
+#endif // WINREPLACE_H

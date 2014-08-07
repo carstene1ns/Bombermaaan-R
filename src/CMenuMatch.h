@@ -25,8 +25,8 @@
  *  \brief Header file of the match menu
  */
 
-#ifndef __CMENUMATCH_H__
-#define __CMENUMATCH_H__
+#ifndef CMENUMATCH_H
+#define CMENUMATCH_H
 
 #include "CMenuBase.h"
 
@@ -76,4 +76,4 @@ public:
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CMENUMATCH_H__
+#endif // CMENUMATCH_H

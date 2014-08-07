@@ -25,8 +25,8 @@
  *  \brief Header file of an explosion
  */
 
-#ifndef __CEXPLOSION_H__
-#define __CEXPLOSION_H__
+#ifndef CEXPLOSION_H
+#define CEXPLOSION_H
 
 #include "CElement.h"
 
@@ -168,4 +168,4 @@ inline const vector<SFlame>& CExplosion::GetFlames (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CEXPLOSION_H__
+#endif // CEXPLOSION_H

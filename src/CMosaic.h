@@ -25,8 +25,8 @@
  *  \brief Header file of the mosaic
  */
 
-#ifndef __CMOSAIC_H__
-#define __CMOSAIC_H__
+#ifndef CMOSAIC_H
+#define CMOSAIC_H
 
 class CDisplay;
 
@@ -78,4 +78,4 @@ inline void CMosaic::SetDisplay (CDisplay* pDisplay)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CMOSAIC_H__
+#endif // CMOSAIC_H

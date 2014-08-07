@@ -25,8 +25,8 @@
  *  \brief Header file of the direct input on Windows
  */
 
-#ifndef __CDIRECTINPUT_H__
-#define __CDIRECTINPUT_H__
+#ifndef CDIRECTINPUT_H
+#define CDIRECTINPUT_H
 
 #define DIRECTINPUT_VERSION 0x0700 // Use DirectInput 7
 #include <DINPUT.H>
@@ -351,4 +351,4 @@ inline bool CDirectInput::GetJoystickButton (int Joystick, int Button)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CDIRECTINPUT_H__
+#endif // CDIRECTINPUT_H

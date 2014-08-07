@@ -46,11 +46,11 @@
 
 // Display origin                               
 #ifdef USE_32_PIXELS_PER_BLOCK
-#define VICTORY_DISPLAY_ORIGIN_X        120       //!< Display origin of the victory screen
-#define VICTORY_DISPLAY_ORIGIN_Y        110       
+    #define VICTORY_DISPLAY_ORIGIN_X    120       //!< Display origin of the victory screen
+    #define VICTORY_DISPLAY_ORIGIN_Y    110       
 #else
-#define VICTORY_DISPLAY_ORIGIN_X        0       //!< Display origin of the victory screen
-#define VICTORY_DISPLAY_ORIGIN_Y        0       
+    #define VICTORY_DISPLAY_ORIGIN_X    0       //!< Display origin of the victory screen
+    #define VICTORY_DISPLAY_ORIGIN_Y    0       
 #endif
                                                 
 // Background

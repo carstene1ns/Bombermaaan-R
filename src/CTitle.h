@@ -26,8 +26,8 @@
  *  \brief Header file of the title screen
  */
 
-#ifndef __CTITLE_H__
-#define __CTITLE_H__
+#ifndef CTITLE_H
+#define CTITLE_H
 
 #include "CModeScreen.h"
 #include "CCloudManager.h"
@@ -79,4 +79,4 @@ inline void CTitle::SetDisplay (CDisplay *pDisplay)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __CTITLE_H__
+#endif // CTITLE_H

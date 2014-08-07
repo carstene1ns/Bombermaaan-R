@@ -25,8 +25,8 @@
  *  \brief Header file of the AI arena manager
  */
 
-#ifndef __CAIARENA_H__
-#define __CAIARENA_H__
+#ifndef CAIARENA_H
+#define CAIARENA_H
 
 #include "CArena.h"
 
@@ -144,4 +144,4 @@ inline bool CAiArena::GetWallBurn (int BlockX, int BlockY)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif
+#endif // CAIARENA_H

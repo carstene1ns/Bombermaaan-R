@@ -37,9 +37,9 @@
 //******************************************************************************************************************************
 
 #ifdef USE_32_PIXELS_PER_BLOCK
-#define INITIAL_TEXT_POSITION_X     226     //!< Position X of the first option's text in the menu
+    #define INITIAL_TEXT_POSITION_X 226     //!< Position X of the first option's text in the menu
 #else
-#define INITIAL_TEXT_POSITION_X     103     //!< Position X of the first option's text in the menu
+    #define INITIAL_TEXT_POSITION_X 103     //!< Position X of the first option's text in the menu
 #endif
 #define INITIAL_TEXT_POSITION_Y     117     //!< Position Y of the first option's text in the menu
 #define TEXT_SPACE_Y                15      //!< Space Y in pixels between two options text.

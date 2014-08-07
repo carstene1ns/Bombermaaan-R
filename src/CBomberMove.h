@@ -25,8 +25,8 @@
  *  \brief Header file of bomber moves
  */
 
-#ifndef __CBOMBERMOVE_H__
-#define __CBOMBERMOVE_H__
+#ifndef CBOMBERMOVE_H
+#define CBOMBERMOVE_H
 
 class CArena;
 class CBomber;
@@ -194,4 +194,4 @@ inline EBomberMove CBomberMove::GetLastRealMove (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif
+#endif // CBOMBERMOVE_H

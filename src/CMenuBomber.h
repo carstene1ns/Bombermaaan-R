@@ -25,8 +25,8 @@
  *  \brief Header file of the bomber menu
  */
 
-#ifndef __CMENUBOMBER_H__
-#define __CMENUBOMBER_H__
+#ifndef CMENUBOMBER_H
+#define CMENUBOMBER_H
 
 #include "CMenuBase.h"
 
@@ -64,4 +64,4 @@ public:
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CMENUBOMBER_H__
+#endif // CMENUBOMBER_H

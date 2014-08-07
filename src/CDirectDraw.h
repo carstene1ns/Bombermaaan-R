@@ -25,8 +25,8 @@
  *  \brief Header file of the direct draw interface
  */
 
-#ifndef __CDIRECTDRAW_H__
-#define __CDIRECTDRAW_H__
+#ifndef CDIRECTDRAW_H
+#define CDIRECTDRAW_H
 
 #include <DDRAW.H>
 
@@ -257,7 +257,4 @@ inline void CDirectDraw::SetOrigin (int OriginX, int OriginY)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-
-
-
-#endif
+#endif // CDIRECTDRAW_H

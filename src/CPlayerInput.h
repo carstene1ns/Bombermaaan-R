@@ -26,14 +26,14 @@
  *  \brief Header file of a player's input
  */
 
-#ifndef __CPLAYERINPUT_H__
-#define __CPLAYERINPUT_H__
+#ifndef CPLAYERINPUT_H
+#define CPLAYERINPUT_H
 
 #include "COptions.h"
 #ifdef WIN32
-#include "CDirectInput.h"
+    #include "CDirectInput.h"
 #else
-#include "CSDLInput.h"
+    #include "CSDLInput.h"
 #endif
 
 //******************************************************************************************************************************
@@ -177,4 +177,4 @@ inline bool CPlayerInput::TestPause (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __CPLAYERINPUT_H__
+#endif // CPLAYERINPUT_H

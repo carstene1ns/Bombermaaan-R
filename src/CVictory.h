@@ -26,8 +26,8 @@
  *  \brief Header file of the victory screen
  */
 
-#ifndef __CVICTORY_H__
-#define __CVICTORY_H__
+#ifndef CVICTORY_H
+#define CVICTORY_H
 
 class CDisplay;
 class CInput;
@@ -133,4 +133,4 @@ inline void CVictory::SetScores (CScores *pScores)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __CVICTORY_H__
+#endif // CVICTORY_H

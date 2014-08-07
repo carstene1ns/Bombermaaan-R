@@ -25,8 +25,8 @@
  *  \brief Header file of the font
  */
 
-#ifndef __CFONT_H__
-#define __CFONT_H__
+#ifndef CFONT_H
+#define CFONT_H
 
 class CDisplay;
 
@@ -130,4 +130,4 @@ inline void CFont::SetShadowColor (EFontColor FontColor)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CFONT_H__
+#endif // CFONT_H

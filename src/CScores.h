@@ -25,8 +25,8 @@
  *  \brief Header file for the scores during a game
  */
 
-#ifndef __CSCORES_H__
-#define __CSCORES_H__
+#ifndef CSCORES_H
+#define CSCORES_H
 
 class COptions;
 
@@ -77,4 +77,4 @@ inline int CScores::GetDrawGamesCount (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __CSCORES_H__
+#endif // CSCORES_H

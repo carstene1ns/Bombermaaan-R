@@ -53,7 +53,7 @@
 
 // This check ensures we've also set NUMBER_OF_KEYBOARD_CONFIGURATIONS in CInput.h appropriate
 #if NUMBER_OF_KEYBOARD_CONFIGURATIONS != CONFIGURATION_JOYSTICK_1
-#error "Mismatch between first joystick input and number of keyboard configurations"
+    #error "Mismatch between first joystick input and number of keyboard configurations"
 #endif
 
 //******************************************************************************************************************************

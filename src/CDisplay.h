@@ -26,13 +26,13 @@
  *  \brief Header file of the display
  */
 
-#ifndef __CDISPLAY_H__
-#define __CDISPLAY_H__
+#ifndef CDISPLAY_H
+#define CDISPLAY_H
 
 #ifdef WIN32
-#include "CDirectDraw.h"
+    #include "CDirectDraw.h"
 #else
-#include "CSDLVideo.h"
+    #include "CSDLVideo.h"
 #endif
 
 //******************************************************************************************************************************
@@ -190,4 +190,4 @@ inline CSDLVideo& CDisplay::GetSDLVideo(void) {
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CDISPLAY_H__
+#endif // CDISPLAY_H

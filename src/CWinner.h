@@ -26,8 +26,8 @@
  *  \brief Header file of the winner screen
  */
 
-#ifndef __CWINNER_H__
-#define __CWINNER_H__
+#ifndef CWINNER_H
+#define CWINNER_H
 
 class CDisplay;
 class CInput;
@@ -99,4 +99,4 @@ inline void CWinner::SetMatch (CMatch *pMatch)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __CWINNER_H__
+#endif // CWINNER_H

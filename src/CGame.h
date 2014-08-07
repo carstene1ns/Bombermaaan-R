@@ -25,8 +25,8 @@
  *  \brief Header file of the game
  */
 
-#ifndef __CGAME_H__
-#define __CGAME_H__
+#ifndef CGAME_H
+#define CGAME_H
 
 #include "CWindow.h"
 #include "CTimer.h"
@@ -153,4 +153,4 @@ inline void CGame::SwitchToGameMode (EGameMode GameMode)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __CGAME_H__
+#endif // CGAME_H

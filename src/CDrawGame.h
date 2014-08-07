@@ -25,8 +25,8 @@
  *  \brief Header file of a draw game
  */
 
-#ifndef __CDRAWGAME_H__
-#define __CDRAWGAME_H__
+#ifndef CDRAWGAME_H
+#define CDRAWGAME_H
 
 #include "CModeScreen.h"
 
@@ -85,4 +85,4 @@ inline void CDrawGame::SetScores (CScores *pScores)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __CDRAWGAME_H__
+#endif // CDRAWGAME_H

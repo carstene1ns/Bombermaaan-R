@@ -26,8 +26,8 @@
  *  \brief Pre-compiled header file
  */
 
-#ifndef __STDAFX_H__
-#define __STDAFX_H__
+#ifndef STDAFX_H
+#define STDAFX_H
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -37,26 +37,23 @@
 #include <time.h>
 
 #ifdef WIN32
-#include <winsock2.h>
-
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-#include <windowsx.h>  // GetWindowStyle(), GetWindowExStyle()
-#include <io.h>
+    #include <winsock2.h>
+    #define WIN32_LEAN_AND_MEAN
+    #include <windows.h>
+    #include <windowsx.h>  // GetWindowStyle(), GetWindowExStyle()
+    #include <io.h>
 #else
-#include "winreplace.h"
-#include <errno.h>
-#include <arpa/inet.h>
-#include <sys/io.h>
-#include <sys/socket.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
+    #include "winreplace.h"
+    #include <errno.h>
+    #include <arpa/inet.h>
+    #include <sys/io.h>
+    #include <sys/socket.h>
+    #include <sys/types.h>
+    #include <sys/stat.h>
+    #include <unistd.h>
 #endif
 
 #include <string>
-//#include <slist>
-//#include <set>
 #include <vector>
 #include <list>
 #include <stack>
@@ -66,7 +63,7 @@
 using namespace std;
 
 #ifndef ASSERT
-#define ASSERT assert
+    #define ASSERT assert
 #endif
 
 //! Define this if the 32-pixels-per-block version should be used (needs the RES32 directory, where the DLL is built) - default is 16 pixels per block
@@ -101,11 +98,11 @@ using namespace std;
 #define ARENA_WIDTH                     15      //!< Arena width in blocks
 #define ARENA_HEIGHT                    13      //!< Arena height in blocks
 #ifdef USE_32_PIXELS_PER_BLOCK
-#define BLOCK_SIZE                      32      //!< Block size in pixels
-#define BLOCK_POSITION_SHIFT            8       //!< Shift number when translating position<->block : i.e. position >> 4
+    #define BLOCK_SIZE                  32      //!< Block size in pixels
+    #define BLOCK_POSITION_SHIFT        8       //!< Shift number when translating position<->block : i.e. position >> 4
 #else
-#define BLOCK_SIZE                      16      //!< Block size in pixels
-#define BLOCK_POSITION_SHIFT            4       //!< Shift number when translating position<->block : i.e. position >> 4
+    #define BLOCK_SIZE                  16      //!< Block size in pixels
+    #define BLOCK_POSITION_SHIFT        4       //!< Shift number when translating position<->block : i.e. position >> 4
 #endif
 #define VIEW_WIDTH                      (ARENA_WIDTH * BLOCK_SIZE)          // Size of the game view from left to right in pixels (size of client area in windowed mode)
 #define VIEW_HEIGHT                     (26 + ARENA_HEIGHT * BLOCK_SIZE)    // Size of the game view from top to bottom in pixels (size of client area in windowed mode)
@@ -116,17 +113,17 @@ using namespace std;
 #include "CTimer.h"
 
 #if defined(WIN32) && !defined(CROSS)
-#  ifdef USE_32_PIXELS_PER_BLOCK
-#    include "..\RES32\resource.h"
-#  else
-#    include "..\RES\resource.h"
-#  endif
+    #ifdef USE_32_PIXELS_PER_BLOCK
+        #include "..\RES32\resource.h"
+    #else
+        #include "..\RES\resource.h"
+    #endif
 #else
-#  ifdef USE_32_PIXELS_PER_BLOCK
-#    include "../RES32/resource.h"
-#  else
-#    include "../RES/resource.h"
-#  endif
+    #ifdef USE_32_PIXELS_PER_BLOCK
+        #include "../RES32/resource.h"
+    #else
+        #include "../RES/resource.h"
+    #endif
 #endif
 #include "RESOURCE.H"
 
@@ -155,4 +152,4 @@ enum EMenuAction
     MENUACTION_NEXT,        //!< Go to next menu mode or to game match screen if there is no next menu mode
 };
 
-#endif
+#endif // STDAFX_H

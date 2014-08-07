@@ -25,8 +25,8 @@
  *  \brief Header file of the arena closer
  */
 
-#ifndef __CARENACLOSER_H__
-#define __CARENACLOSER_H__
+#ifndef CARENACLOSER_H
+#define CARENACLOSER_H
 
 class CArena;
 class CArenaSnapshot;
@@ -140,4 +140,4 @@ inline float CArenaCloser::GetTimeLeftBeforeClosingNextBlock (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif //__CARENACLOSER_H__
+#endif //CARENACLOSER_H

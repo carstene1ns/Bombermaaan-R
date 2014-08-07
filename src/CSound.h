@@ -26,8 +26,8 @@
  *  \brief Header file of the sound
  */
 
-#ifndef __CSOUND_H__
-#define __CSOUND_H__
+#ifndef CSOUND_H
+#define CSOUND_H
 
 #include "SDL.h"
 #include "SDL_mixer.h"
@@ -157,4 +157,4 @@ inline bool CSound::IsPaused (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CSOUND_H__
+#endif // CSOUND_H

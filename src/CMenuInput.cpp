@@ -41,17 +41,17 @@
 #define MENUINPUT_SPRITELAYER       1       //!< Sprite layer where to draw sprites
 
 #ifdef USE_32_PIXELS_PER_BLOCK
-#define TITLE_TEXT_POSITION_Y       90      //!< Position Y of the title text that is centered on the X axis
+    #define TITLE_TEXT_POSITION_Y   90      //!< Position Y of the title text that is centered on the X axis
 #else
-#define TITLE_TEXT_POSITION_Y       45      //!< Position Y of the title text that is centered on the X axis
+    #define TITLE_TEXT_POSITION_Y   45      //!< Position Y of the title text that is centered on the X axis
 #endif
 
 #ifdef USE_32_PIXELS_PER_BLOCK
-#define INITIAL_TEXT_POSITION_X     191     //!< Initial position of the player input's name
-#define INITIAL_TEXT_POSITION_Y     (77+90)
+    #define INITIAL_TEXT_POSITION_X 191     //!< Initial position of the player input's name
+    #define INITIAL_TEXT_POSITION_Y (77+90)
 #else
-#define INITIAL_TEXT_POSITION_X     91      //!< Initial position of the player input's name
-#define INITIAL_TEXT_POSITION_Y     77
+    #define INITIAL_TEXT_POSITION_X 91      //!< Initial position of the player input's name
+    #define INITIAL_TEXT_POSITION_Y 77
 #endif
 #define TEXT_SPACE_Y                21      //!< Y Space in pixels between each text Y position
 

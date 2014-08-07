@@ -25,8 +25,8 @@
  *  \brief Header file of the pause message
  */
 
-#ifndef __CPAUSEMESSAGE_H__
-#define __CPAUSEMESSAGE_H__
+#ifndef CPAUSEMESSAGE_H
+#define CPAUSEMESSAGE_H
 
 class CDisplay;
 class CSound;
@@ -77,4 +77,4 @@ inline bool CPauseMessage::IsOutOfBounds (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CPAUSEMESSAGE_H__
+#endif // CPAUSEMESSAGE_H

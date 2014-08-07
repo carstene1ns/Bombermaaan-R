@@ -25,8 +25,8 @@
  *  \brief Header file of the SDL input
  */
 
-#ifndef __CSDLINPUT_H__
-#define __CSDLINPUT_H__
+#ifndef CSDLINPUT_H
+#define CSDLINPUT_H
 
 #include "SDL.h"
 
@@ -397,4 +397,4 @@ inline void CSDLInput::SetJoystickButton (int Joystick, int Button, bool onoff)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CSDLINPUT_H__
+#endif // CSDLINPUT_H

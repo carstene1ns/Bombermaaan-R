@@ -25,8 +25,8 @@
  *  \brief Header file of the yes/no menu
  */
 
-#ifndef __CMENUYESNO_H__
-#define __CMENUYESNO_H__
+#ifndef CMENUYESNO_H
+#define CMENUYESNO_H
 
 #include "CFont.h"
 
@@ -103,4 +103,4 @@ inline bool CMenuYesNo::IsActive (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CMENUYESNO_H__
+#endif // CMENUYESNO_H

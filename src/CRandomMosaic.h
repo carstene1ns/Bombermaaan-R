@@ -25,8 +25,8 @@
  *  \brief Header file of a random mosaic
  */
 
-#ifndef __CRANDOMMOSAIC_H__
-#define __CRANDOMMOSAIC_H__
+#ifndef CRANDOMMOSAIC_H
+#define CRANDOMMOSAIC_H
 
 class CMosaic;
 class CDisplay;
@@ -80,4 +80,4 @@ public:
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CRANDOMMOSAIC_H__
+#endif // CRANDOMMOSAIC_H

@@ -219,11 +219,11 @@ SBomberSpriteTable CBomber::m_BomberSpriteTables[MAX_NUMBER_OF_STATES] =
 
 // Offset when drawing the bomber sprite
 #ifdef USE_32_PIXELS_PER_BLOCK
-#define BOMBER_OFFSETX  (-6)
-#define BOMBER_OFFSETY  (-12)
+    #define BOMBER_OFFSETX  (-6)
+    #define BOMBER_OFFSETY  (-12)
 #else
-#define BOMBER_OFFSETX  (-3)
-#define BOMBER_OFFSETY  (-6)
+    #define BOMBER_OFFSETX  (-3)
+    #define BOMBER_OFFSETY  (-6)
 #endif
 
 /**

@@ -25,8 +25,8 @@
  *  \brief Header file of the menu input
  */
 
-#ifndef __CMENUINPUT_H__
-#define __CMENUINPUT_H__
+#ifndef CMENUINPUT_H
+#define CMENUINPUT_H
 
 #include "CMenuBase.h"
 
@@ -61,4 +61,4 @@ public:
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CMENUINPUT_H__
+#endif // CMENUINPUT_H

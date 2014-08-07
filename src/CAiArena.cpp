@@ -40,9 +40,9 @@
 //#define DEBUG_DRAW_BOMB_OWNERS
 
 #if defined(DEBUG_DRAW_SOFTWALL_BLOCKS) || defined (DEBUG_DRAW_BURNWALLDANGER_BLOCKS) || defined (DEBUG_DRAW_BOMB_OWNERS)
-#include "CFont.h"
+    #include "CFont.h"
 
-static CFont m_Font;
+    static CFont m_Font;
 #endif
 
 //******************************************************************************************************************************

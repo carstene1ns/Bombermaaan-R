@@ -25,8 +25,8 @@
  *  \brief Header file of the SDL video
  */
 
-#ifndef __CSDLVIDEO_H__
-#define __CSDLVIDEO_H__
+#ifndef CSDLVIDEO_H
+#define CSDLVIDEO_H
 
 #include "SDL.h"
 #include "STDAFX.H"
@@ -248,7 +248,4 @@ inline void CSDLVideo::SetNewPrimary (SDL_Surface *pSurface)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-
-
-
-#endif
+#endif // CSDLVIDEO_H

@@ -27,8 +27,8 @@
  *  \brief Header file for the level
  */
 
-#ifndef __CLEVEL_H__
-#define __CLEVEL_H__
+#ifndef CLEVEL_H
+#define CLEVEL_H
 
 #include "CItem.h"
 
@@ -157,4 +157,4 @@ inline const char* CLevel::GetLevelName (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __CLEVEL_H__
+#endif // CLEVEL_H

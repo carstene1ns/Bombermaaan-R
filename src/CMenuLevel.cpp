@@ -43,11 +43,11 @@
 #define MENUMATCH_SPRITELAYER       1               //!< Sprite layer where to draw sprites
                                                     
 #ifdef USE_32_PIXELS_PER_BLOCK
-#define TITLE_TEXT_POSITION_Y       90              //!< Position Y of the title text that is centered on the X axis
-#define WARNING_TEXT_POSITION_Y    350              //!< Position Y of a warning text that is centered on the X axis (will be displayed if starting points are missing for some players)
+    #define TITLE_TEXT_POSITION_Y    90              //!< Position Y of the title text that is centered on the X axis
+    #define WARNING_TEXT_POSITION_Y 350              //!< Position Y of a warning text that is centered on the X axis (will be displayed if starting points are missing for some players)
 #else
-#define TITLE_TEXT_POSITION_Y       45              //!< Position Y of the title text that is centered on the X axis
-#define WARNING_TEXT_POSITION_Y    185              //!< Position Y of a warning text that is centered on the X axis (will be displayed if starting points are missing for some players)
+    #define TITLE_TEXT_POSITION_Y    45              //!< Position Y of the title text that is centered on the X axis
+    #define WARNING_TEXT_POSITION_Y 185              //!< Position Y of a warning text that is centered on the X axis (will be displayed if starting points are missing for some players)
 #endif
 
 #ifdef USE_32_PIXELS_PER_BLOCK

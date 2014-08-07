@@ -25,8 +25,8 @@
  *  \brief Header file of the controls
  */
 
-#ifndef __CCONTROLS_H__
-#define __CCONTROLS_H__
+#ifndef CCONTROLS_H
+#define CCONTROLS_H
 
 #include "CFont.h"
 #include "CModeScreen.h"
@@ -86,4 +86,4 @@ inline void CControls::SetDisplay (CDisplay *pDisplay)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __CCONTROLS_H__
+#endif // CCONTROLS_H

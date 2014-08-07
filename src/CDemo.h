@@ -26,8 +26,8 @@
  *  \brief Header file of the demo
  */
 
-#ifndef __CDEMO_H__
-#define __CDEMO_H__
+#ifndef CDEMO_H
+#define CDEMO_H
 
 class CDisplay;
 class CInput;
@@ -158,4 +158,4 @@ inline void CDemo::SetSound (CSound *pSound)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __CDEMO_H__
+#endif // CDEMO_H

@@ -25,8 +25,8 @@
  *  \brief Header file of the hurry message
  */
 
-#ifndef __CHURRYMESSAGE_H__
-#define __CHURRYMESSAGE_H__
+#ifndef CHURRYMESSAGE_H
+#define CHURRYMESSAGE_H
 
 #include "CScroller.h"
 
@@ -58,4 +58,4 @@ public:
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CHURRYMESSAGE_H__
+#endif // CHURRYMESSAGE_H

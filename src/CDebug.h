@@ -26,8 +26,8 @@
  *  \brief Header file of the debug utilities
  */
 
-#ifndef __CDEBUG_H__
-#define __CDEBUG_H__
+#ifndef CDEBUG_H
+#define CDEBUG_H
 
 class CTimer;
 class CGame;
@@ -120,4 +120,4 @@ inline bool CDebug::IsComputerConsoleActive (int Player)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CDEBUG_H__
+#endif // CDEBUG_H

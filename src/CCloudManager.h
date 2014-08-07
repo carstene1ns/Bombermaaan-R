@@ -25,8 +25,8 @@
  *  \brief Header file of the cloud manager
  */
 
-#ifndef __CCLOUDMANAGER_H__
-#define __CCLOUDMANAGER_H__
+#ifndef CCLOUDMANAGER_H
+#define CCLOUDMANAGER_H
 
 #include "CScroller.h"
 
@@ -75,4 +75,4 @@ inline void CCloudManager::SetDisplay (CDisplay* pDisplay)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CCLOUDMANAGER_H__
+#endif // CCLOUDMANAGER_H

@@ -20,8 +20,8 @@
 ************************************************************************************/
 
 /// ResGen.h
-#ifndef __RESGEN_H__
-#define __RESGEN_H__
+#ifndef RESGEN_H
+#define RESGEN_H
 
 #include <stdio.h>
 #include <unistd.h>
@@ -29,11 +29,11 @@
 
 // macros
 #ifdef USE_32_PIXELS_PER_BLOCK
-#   define RESDIR   "../RES32/"
-#   define NAME_OF_BOMBERMAN_DLL "Bombermaaan_32.so"
+    #define RESDIR   "../RES32/"
+    #define NAME_OF_BOMBERMAN_DLL "Bombermaaan_32.so"
 #else
-#   define RESDIR   "../RES/"
-#   define NAME_OF_BOMBERMAN_DLL "Bombermaaan.so"
+    #define RESDIR   "../RES/"
+    #define NAME_OF_BOMBERMAN_DLL "Bombermaaan.so"
 #endif
 
 #define RCFILE      "resource.rc"
@@ -43,7 +43,7 @@
 #define BUFSIZE 1024
 
 #ifndef MIN
-#define MIN(_x,_y)  ((_x) < (_y) ? (_x) : (_y))
+    #define MIN(_x,_y)  ((_x) < (_y) ? (_x) : (_y))
 #endif
 
 // data structures
@@ -71,4 +71,4 @@ bool completeResourceArrayWithRC(int rcBitmapCount, int rcSoundCount,
 bool generateSourceCode(int hBitmapCount, int hSoundCount,
                         int realBitmapCount, int realSoundCount);
 
-#endif
+#endif // RESGEN_H

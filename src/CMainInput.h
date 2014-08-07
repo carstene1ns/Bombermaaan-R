@@ -26,13 +26,13 @@
  *  \brief Header file of the main input
  */
 
-#ifndef __CMAININPUT_H__
-#define __CMAININPUT_H__
+#ifndef CMAININPUT_H
+#define CMAININPUT_H
 
 #ifdef WIN32
-#  include "CDirectInput.h"
+    #include "CDirectInput.h"
 #else
-#  include "CSDLInput.h"
+    #include "CSDLInput.h"
 #endif
 
 //******************************************************************************************************************************
@@ -179,4 +179,4 @@ inline bool CMainInput::TestBreak (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __CMAININPUT_H__
+#endif // CMAININPUT_H

@@ -28,13 +28,13 @@
  *  \brief Header file for the game options
  */
 
-#ifndef __COPTIONS_H__
-#define __COPTIONS_H__
+#ifndef COPTIONS_H
+#define COPTIONS_H
 
 #include "CDisplay.h"
 #include "CItem.h"
 #include "CLevel.h"
-#include "../third-party/tinyxml/tinyxml.h"
+#include "tinyxml.h"
 
 //******************************************************************************************************************************
 //******************************************************************************************************************************
@@ -292,5 +292,4 @@ inline EActionAIAlive COptions::GetOption_ActionWhenOnlyAIPlayersLeft()
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __COPTIONS_H__
-
+#endif // COPTIONS_H

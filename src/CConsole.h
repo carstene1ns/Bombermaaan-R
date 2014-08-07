@@ -26,13 +26,13 @@
  *  \brief Header file of the console
  */
 
-#ifndef __CCONSOLE_H__
-#define __CCONSOLE_H__
+#ifndef CCONSOLE_H
+#define CCONSOLE_H
 
 #ifdef WIN32
-#include <windows.h>
+    #include <windows.h>
 #else
-#include "winreplace.h"
+    #include "winreplace.h"
 #endif
 
 //******************************************************************************************************************************
@@ -120,4 +120,4 @@ inline void CConsole::SetFilterRepeatedMessages (bool Filter)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CCONSOLE_H__
+#endif // CCONSOLE_H

@@ -25,15 +25,15 @@
  *  \brief Header file of input devices
  */
 
-#ifndef __CINPUT_H__
-#define __CINPUT_H__
+#ifndef CINPUT_H
+#define CINPUT_H
 
 class CTimer;
 
 #ifdef WIN32
-#include "CDirectInput.h"
+    #include "CDirectInput.h"
 #else
-#include "CSDLInput.h"
+    #include "CSDLInput.h"
 #endif
 #include "CMainInput.h"
 #include "CPlayerInput.h"
@@ -142,4 +142,4 @@ inline int CInput::GetPlayerInputCount (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __CINPUT_H__
+#endif // CINPUT_H

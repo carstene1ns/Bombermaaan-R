@@ -26,8 +26,8 @@
  *  \brief Header file of a match
  */
 
-#ifndef __CMATCH_H__
-#define __CMATCH_H__
+#ifndef CMATCH_H
+#define CMATCH_H
 
 class CDisplay;
 class CInput;
@@ -43,7 +43,6 @@ class CHurryMessage;
 #include "CClock.h"
 #include "CAiManager.h"
 #include "CModeScreen.h"
-
 #include "CSound.h"
 
 //******************************************************************************************************************************
@@ -172,4 +171,4 @@ inline int CMatch::GetWinnerPlayer (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __CMATCH_H__
+#endif // CMATCH_H

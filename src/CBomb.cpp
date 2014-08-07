@@ -102,9 +102,9 @@ int CBomb::m_BounceMoveY[NUMBER_OF_BOMBFLY_DIRECTIONS][3] =
 
 // Speed of a moving bomb (in pixels per second)
 #ifdef USE_32_PIXELS_PER_BLOCK
-#define SPEED_BOMBMOVE          220
+    #define SPEED_BOMBMOVE      220
 #else
-#define SPEED_BOMBMOVE          110
+    #define SPEED_BOMBMOVE      110
 #endif
 
 // Bomb animation times (in seconds)

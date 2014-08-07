@@ -26,8 +26,8 @@
  *  \brief Header file of the arena
  */
 
-#ifndef __CARENA_H__
-#define __CARENA_H__
+#ifndef CARENA_H
+#define CARENA_H
 
 #include "CArenaCloser.h"
 #include "CBomber.h"
@@ -40,7 +40,6 @@
 class CClock;
 class CDisplay;
 class CSound;
-//class COptions;
 class CArenaSnapshot;
 
 #include "COptions.h"
@@ -550,4 +549,4 @@ inline int CArena::ToPosition (int Block)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif //__CARENA_H__
+#endif // CARENA_H

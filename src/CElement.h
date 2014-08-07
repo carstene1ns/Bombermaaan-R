@@ -25,8 +25,8 @@
  *  \brief An element in the arena
  */
 
-#ifndef __CELEMENT_H__
-#define __CELEMENT_H__
+#ifndef CELEMENT_H
+#define CELEMENT_H
 
 class CDisplay;
 class CSound;
@@ -97,4 +97,4 @@ inline bool CElement::Exist (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  //!< __CELEMENT_H__
+#endif // CELEMENT_H

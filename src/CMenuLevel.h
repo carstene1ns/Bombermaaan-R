@@ -25,8 +25,8 @@
  *  \brief Header file of the level menu
  */
 
-#ifndef __CMENULEVEL_H__
-#define __CMENULEVEL_H__
+#ifndef CMENULEVEL_H
+#define CMENULEVEL_H
 
 #include "CMenuBase.h"
 
@@ -60,4 +60,4 @@ public:
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CMENULEVEL_H__
+#endif // CMENULEVEL_H

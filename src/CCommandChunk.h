@@ -25,8 +25,8 @@
  *  \brief Header file of the command chunk
  */
 
-#ifndef __CCOMMANDCHUNK_H__
-#define __CCOMMANDCHUNK_H__
+#ifndef CCOMMANDCHUNK_H
+#define CCOMMANDCHUNK_H
 
 #include "CBomber.h"
 
@@ -106,4 +106,4 @@ inline int CCommandChunk::GetNumberOfSteps (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif
+#endif // CCOMMANDCHUNK_H

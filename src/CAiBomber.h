@@ -25,8 +25,8 @@
  *  \brief Header file of the bot bomber
  */
 
-#ifndef __CAIBOMBER_H__
-#define __CAIBOMBER_H__
+#ifndef CAIBOMBER_H
+#define CAIBOMBER_H
 
 #include "CBomber.h"
 
@@ -151,4 +151,4 @@ inline void CAiBomber::SetDisplay (CDisplay *pDisplay)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif
+#endif // CAIBOMBER_H

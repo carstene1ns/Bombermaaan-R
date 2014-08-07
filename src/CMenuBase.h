@@ -25,8 +25,8 @@
  *  \brief Header file of the menu base
  */
 
-#ifndef __CMENUBASE_H__
-#define __CMENUBASE_H__
+#ifndef CMENUBASE_H
+#define CMENUBASE_H
 
 class CDisplay;
 class CInput;
@@ -127,4 +127,4 @@ inline void CMenuBase::SetFont (CFont *pFont)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CMENUBASE_H__
+#endif // CMENUBASE_H

@@ -29,11 +29,9 @@
 
 #include "STDAFX.H"
 #include "CLevel.h"
-//#include "COptions.h"
-//#include "CInput.h"
 #include "CArena.h"
 #include <sstream>
-#include "../third-party/simpleini/SimpleIni.h"
+#include "SimpleIni.h"
 
 //******************************************************************************************************************************
 //******************************************************************************************************************************

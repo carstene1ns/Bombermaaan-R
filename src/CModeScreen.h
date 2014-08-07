@@ -26,8 +26,8 @@
  */
 // CModeScreen.h
 
-#ifndef __CMODESCREEN_H__
-#define __CMODESCREEN_H__
+#ifndef CMODESCREEN_H
+#define CMODESCREEN_H
 
 class CDisplay;
 class CInput;
@@ -100,4 +100,4 @@ inline void CModeScreen::SetSound (CSound *pSound)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif  // __CMODESCREEN_H__
+#endif // CMODESCREEN_H

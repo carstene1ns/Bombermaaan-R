@@ -27,8 +27,8 @@
  *  \brief Header file of the bomber
  */
 
-#ifndef __CBOMBER_H__
-#define __CBOMBER_H__
+#ifndef CBOMBER_H
+#define CBOMBER_H
 
 #include "CElement.h"
 #include "CBomberMove.h"
@@ -393,4 +393,4 @@ inline EBomberType CBomber::GetBomberType (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif
+#endif // CBOMBER_H

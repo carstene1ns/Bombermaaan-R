@@ -25,8 +25,8 @@
  *  \brief Header file of the arena's wall element
  */
 
-#ifndef __CWALL_H__
-#define __CWALL_H__
+#ifndef CWALL_H
+#define CWALL_H
 
 #include "CElement.h"
 
@@ -115,4 +115,4 @@ inline int CWall::GetType (void)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CWALL_H__
+#endif // CWALL_H

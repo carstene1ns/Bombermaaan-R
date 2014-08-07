@@ -25,8 +25,8 @@
  *  \brief Header file of the board
  */
 
-#ifndef __CBOARD_H__
-#define __CBOARD_H__
+#ifndef CBOARD_H
+#define CBOARD_H
 
 class CClock;
 class CDisplay;
@@ -117,5 +117,4 @@ inline void CBoard::SetArena (CArena *pArena)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-
-#endif
+#endif // CBOARD_H

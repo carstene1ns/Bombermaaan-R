@@ -25,8 +25,8 @@
  *  \brief Header file of the AI manager
  */
 
-#ifndef __CAIMANAGER_H__
-#define __CAIMANAGER_H__
+#ifndef CAIMANAGER_H
+#define CAIMANAGER_H
 
 #include "CAiArena.h"
 
@@ -78,4 +78,4 @@ inline void CAiManager::SetDisplay (CDisplay *pDisplay)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif
+#endif // CAIMANAGER_H

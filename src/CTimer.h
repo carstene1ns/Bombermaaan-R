@@ -30,8 +30,8 @@
  *  dhonn@usa.net
  */
 
-#ifndef __CTIMER_H__
-#define __CTIMER_H__
+#ifndef CTIMER_H
+#define CTIMER_H
 
 #include "STDAFX.H"
 
@@ -177,8 +177,4 @@ public:
     double GetTime (void) { ASSERT(!m_Pause); return m_Time; }
 };
 
-
-
-
-
-#endif
+#endif // CTIMER_H

@@ -25,8 +25,8 @@
  *  \brief Header file of the menu
  */
 
-#ifndef __CMENU_H__
-#define __CMENU_H__
+#ifndef CMENU_H
+#define CMENU_H
 
 #include "CMenuBomber.h"
 #include "CMenuInput.h"
@@ -166,4 +166,4 @@ inline void CMenu::SetScores (CScores *pScores)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#endif // __CMENU_H__
+#endif // CMENU_H

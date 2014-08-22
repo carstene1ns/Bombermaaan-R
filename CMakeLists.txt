@@ -3,18 +3,34 @@ cmake_minimum_required(VERSION 2.8)
 
 project(Bombermaaan-R)
 
+# add custom modules
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMakeModules/")
+
 set(VERSION 1.4.0 CACHE STRING "Version of Bombermaaan-R")
 
 set(BUILD_SHARED_LIBS ON CACHE BOOL "build the data library as shared library")
+set(USE_LOCAL_TINYXML OFF CACHE BOOL "use the bundled version of TinyXML")
 
 # needed packages
 find_package(SDL REQUIRED)
 find_package(SDL_mixer REQUIRED)
+find_package(TinyXML)
+
+# fallback to bundled version
+if(NOT TinyXML_FOUND)
+    set(USE_LOCAL_TINYXML ON)
+    set(TinyXML_LIBRARY TinyXML)
+    set(TinyXML_INCLUDE_DIR third-party/tinyxml)
+endif()
+
+# clean up cache variables after FindSDL
+mark_as_advanced(FORCE SDL_LIBRARY SDL_INCLUDE_DIR SDLMAIN_LIBRARY)
 
 # includes
 include_directories(src
     ${SDL_INCLUDE_DIR}
     ${SDL_MIXER_INCLUDE_DIRS}
+    ${TinyXML_INCLUDE_DIR}
 )
 
 # sources
@@ -89,18 +105,21 @@ endforeach()
 # third-party libraries
 include_directories(third-party/simpleini)
 
-include_directories(third-party/tinyxml)
-set(TINYXML_SRCFILES
-    tinystr.cpp
-    tinyxml.cpp
-    tinyxmlerror.cpp
-    tinyxmlparser.cpp
-)
-# add source directory
-foreach(f ${TINYXML_SRCFILES})
-    list(APPEND TINYXML_SOURCES third-party/tinyxml/${f})
-endforeach()
-add_library(TinyXML STATIC ${TINYXML_SOURCES})
+if(USE_LOCAL_TINYXML)
+    set(TINYXML_SRCFILES
+        tinystr.cpp
+        tinyxml.cpp
+        tinyxmlerror.cpp
+        tinyxmlparser.cpp
+    )
+    # add source directory
+    foreach(f ${TINYXML_SRCFILES})
+        list(APPEND TINYXML_SOURCES third-party/tinyxml/${f})
+    endforeach()
+    add_library(TinyXML STATIC ${TINYXML_SOURCES})
+    set(TinyXML_LIBRARY TinyXML)
+    set(TinyXML_DEPENDENCY TinyXML)
+endif()
 
 # copy sounds and music files to RES and RES32 directories
 add_custom_target(copy_audiofiles)
@@ -113,7 +132,6 @@ add_custom_command(TARGET copy_audiofiles PRE_BUILD
 )
 
 # data library
-include_directories(RESGEN)
 add_executable(ResGen RESGEN/ResGen.cpp)
 add_dependencies(ResGen copy_audiofiles)
 add_custom_command(OUTPUT RESGEN/ResData.c
@@ -127,13 +145,13 @@ add_library(${PROJECT_NAME}-data RESGEN/ResData.c)
 add_executable(${PROJECT_NAME} ${BOMBERMAAAN_R_SOURCES})
 target_link_libraries(${PROJECT_NAME}
     ${PROJECT_NAME}-data
-    TinyXML
+    ${TinyXML_LIBRARY}
     ${SDL_MIXER_LIBRARIES}
     ${SDL_LIBRARY}
 )
 add_dependencies(${PROJECT_NAME}
     ${PROJECT_NAME}-data
-    TinyXML
+    ${TinyXML_DEPENDENCY}
 )
 
 # installation
@@ -152,7 +170,7 @@ endif()
 set(CPACK_PACKAGE_NAME ${PROJECT_NAME})
 set(CPACK_PACKAGE_VERSION ${VERSION})
 set(CPACK_GENERATOR "TGZ;DEB")
-
+# for debian
 set(CPACK_DEBIAN_PACKAGE_DEPENDS
     "libc6 (>= 2.7-1),"
     "libgcc1 (>= 1:4.1.1-21),"

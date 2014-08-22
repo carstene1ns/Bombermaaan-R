@@ -63,5 +63,5 @@ Check [http://bombermaaan.sourceforge.net/][1] for the latest news.
 [1]: http://bombermaaan.sourceforge.net/
 [2]: http://www.grinninglizard.com/tinyxml
 [3]: http://www.doxygen.org
-[4]: http://bombermaaan.sourceforge.net/doxydoc/html/
+[4]: http://f4ke.de/dev/bombermaaan-r/doxydoc/
 [5]: https://github.com/brofield/simpleini
